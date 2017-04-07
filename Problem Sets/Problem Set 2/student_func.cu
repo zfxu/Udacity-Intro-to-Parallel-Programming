@@ -118,6 +118,9 @@ void gaussian_blur(const unsigned char* const inputChannel,
   // GPU memory:
   //
   
+  // A note for myself: x is assoiciated with column, y is associated with row
+  //                    pos = x + y * numCols
+	
   int abs_x    = blockIdx.x * blockDim.x + threadIdx.x;
   int abs_y    = blockIdx.y * blockDim.y + threadIdx.y;
   float result = 0.0;
